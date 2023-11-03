@@ -1,0 +1,48 @@
+.taskForm {
+  margin-top: calc(0px - 2rem);
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.taskForm > input {
+  width: 100%;
+
+  padding: 1rem 0 1rem 1rem;
+
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+
+  line-height: 140%;
+  color: var(--gray-100);
+}
+
+.taskForm > button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--blue-dark);
+  color: var(--gray-100);
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 140%;
+
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+}
+
+.taskForm > button:hover {
+  background: var(--blue);
+}

@@ -1,0 +1,44 @@
+.task {
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.task > input {
+  margin-right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  cursor: pointer;
+}
+
+.task > label {
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  line-height: 140%;
+  text-align: justify;
+
+  cursor: pointer;
+}
+
+.task > button {
+  display: flex;
+  background: transparent;
+  border: none;
+
+  margin-left: 0.75rem;
+
+  color: var(--gray-300);
+
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.task > button:hover {
+  color: var(--red);
+}
