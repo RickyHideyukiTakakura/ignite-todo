@@ -1,16 +1,42 @@
 import { Trash } from "phosphor-react";
 import styles from "./Task.module.css";
 
-export const Task = () => {
+export interface TaskProps {
+  id: string;
+  title: string;
+  isComplete: boolean;
+  onChangeTaskState: (id: string) => void;
+  onDeleteTask: (id: string) => void;
+}
+
+export const Task = ({
+  id,
+  title,
+  isComplete,
+  onChangeTaskState,
+  onDeleteTask,
+}: TaskProps) => {
+  const handleCheckboxChange = () => {
+    onChangeTaskState(id);
+  };
+
+  const handleDeleteTask = () => {
+    onDeleteTask(id);
+  };
+
   return (
     <div className={styles.task}>
-      <input type="checkbox" name="checkbox" id="checkbox" />
-      <label htmlFor="checkbox">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae omnis
-        deserunt, explicabo unde delectus quo nihil molestiae sit eius culpa
-        odit non, illo enim commodi facere veniam soluta repellendus doloremque!
+      <input
+        type="checkbox"
+        id={id}
+        onChange={handleCheckboxChange}
+        checked={isComplete}
+      />
+      <label htmlFor={id}>
+        <span className={styles.checkbox}></span>
+        {title}
       </label>
-      <button>
+      <button onClick={handleDeleteTask}>
         <Trash size={24} />
       </button>
     </div>
